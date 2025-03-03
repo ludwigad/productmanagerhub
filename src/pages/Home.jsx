@@ -1,15 +1,41 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import { FaRocket, FaCode, FaCogs, FaChartLine } from 'react-icons/fa';
+import { FaRocket, FaCode, FaCogs, FaChartLine, FaRobot, FaUsers, FaBook, FaLightbulb } from 'react-icons/fa';
 import Footer from '../components/Footer';
 import TechScroll from '../components/TechScroll';
+import { useNavigate } from 'react-router-dom';
 
 const BOOKING_URL = "https://outlook.office365.com/book/ProductManagerHub1@productmanagerhub.io/";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const handleBooking = () => {
     window.open(BOOKING_URL, '_blank');
   };
+
+  const services = [
+    {
+      icon: <FaRobot className="text-purple-500" size={24} />,
+      title: "AI Assistant (Oden)",
+      description: "Get instant answers and guidance from our specialized product management AI assistant."
+    },
+    {
+      icon: <FaUsers className="text-blue-500" size={24} />,
+      title: "Community Platform",
+      description: "Connect with fellow product managers, share insights, and grow together in our exclusive community."
+    },
+    {
+      icon: <FaBook className="text-green-500" size={24} />,
+      title: "Smart Product Tools",
+      description: "Manage your product backlog and prioritization with AI-powered intelligence."
+    },
+    {
+      icon: <FaLightbulb className="text-yellow-500" size={24} />,
+      title: "Prompt Engineering",
+      description: "Access specialized PM prompts and collaborate on building better AI interactions."
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-[#1a1b1e]">
@@ -21,21 +47,21 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 animate-gradient"></div>
           <div className="max-w-6xl mx-auto px-6 relative">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              We Build The Future<br />
+              AI-Powered Product<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
-                One Pixel at a Time
+                Management Platform
               </span>
             </h1>
             <p className="text-xl text-gray-400 max-w-2xl mb-12">
-              Transforming small and medium businesses with cutting-edge technology solutions. 
-              We don't just build software—we build your digital future.
+              Revolutionizing product management with AI assistance, community collaboration, 
+              and intelligent tools. Join us in shaping the future of product development.
             </p>
             <div className="flex flex-wrap gap-4">
               <button 
-                onClick={handleBooking}
+                onClick={() => navigate('/roadmap')}
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition-all hover:scale-105"
               >
-                See Our Work
+                What We're Building
               </button>
               <button 
                 onClick={handleBooking}
@@ -56,28 +82,7 @@ const Home = () => {
               Solutions That Drive Growth
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                {
-                  icon: <FaRocket className="text-blue-500" size={24} />,
-                  title: "Custom Software Development",
-                  description: "Tailored solutions that perfectly fit your business needs and growth trajectory."
-                },
-                {
-                  icon: <FaCode className="text-purple-500" size={24} />,
-                  title: "Web Applications",
-                  description: "Modern, responsive, and lightning-fast web applications built with cutting-edge tech."
-                },
-                {
-                  icon: <FaCogs className="text-green-500" size={24} />,
-                  title: "Process Automation",
-                  description: "Streamline your operations with smart automation solutions that save time and money."
-                },
-                {
-                  icon: <FaChartLine className="text-orange-500" size={24} />,
-                  title: "Digital Transformation",
-                  description: "Guide your business into the digital age with our comprehensive transformation services."
-                }
-              ].map((service, index) => (
+              {services.map((service, index) => (
                 <div 
                   key={index}
                   className="bg-[#21222c] p-8 rounded-xl hover:bg-[#2a2b35] transition-all hover:scale-[1.02] cursor-pointer"

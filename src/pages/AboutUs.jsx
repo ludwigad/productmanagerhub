@@ -1,41 +1,41 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { FaUsers, FaLightbulb, FaHandshake, FaRocket } from 'react-icons/fa';
+import { FaUsers, FaLightbulb, FaHandshake, FaRocket, FaRobot, FaShieldAlt } from 'react-icons/fa';
 
 const AboutUs = () => {
   const values = [
     {
-      icon: <FaLightbulb className="text-yellow-400" size={32} />,
-      title: "Innovation First",
-      description: "We're constantly pushing the boundaries of what's possible with technology, bringing cutting-edge solutions to small and medium businesses."
+      icon: <FaRobot className="text-purple-400" size={32} />,
+      title: "AI-First Approach",
+      description: "We believe in harnessing the power of AI to revolutionize how product managers work and make decisions."
     },
     {
-      icon: <FaHandshake className="text-blue-400" size={32} />,
-      title: "Partnership Focused",
-      description: "We don't just build solutions; we build lasting relationships. Your success is our success."
+      icon: <FaUsers className="text-blue-400" size={32} />,
+      title: "Community Driven",
+      description: "Our platform is built on the collective wisdom of product managers, fostering collaboration and knowledge sharing."
     },
     {
-      icon: <FaUsers className="text-green-400" size={32} />,
-      title: "People Centric",
-      description: "Technology serves people, not the other way around. We create solutions that empower your team and delight your customers."
+      icon: <FaLightbulb className="text-green-400" size={32} />,
+      title: "Innovation Focus",
+      description: "We're constantly pushing boundaries to create tools that make product management more efficient and effective."
     },
     {
-      icon: <FaRocket className="text-purple-400" size={32} />,
-      title: "Results Driven",
-      description: "We measure our success by the tangible value we bring to your business through automation and digital transformation."
+      icon: <FaShieldAlt className="text-orange-400" size={32} />,
+      title: "Enterprise Ready",
+      description: "Built with security and scalability in mind, our platform is ready for teams of any size."
     }
   ];
 
   const clients = [
-    "Healthcare Providers",
-    "Financial Services",
-    "Professional Services",
-    "E-commerce",
-    "Manufacturing",
-    "Education",
-    "Real Estate",
-    "Non-Profits"
+    "Technology Companies",
+    "SaaS Platforms",
+    "Enterprise Software",
+    "AI/ML Companies",
+    "Digital Agencies",
+    "Product Teams",
+    "Startups",
+    "Scale-ups"
   ];
 
   return (
@@ -48,10 +48,12 @@ const AboutUs = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 animate-gradient"></div>
           <div className="max-w-6xl mx-auto px-6 relative">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Transforming Businesses Through Technology
+              Building the Future of<br />
+              Product Management
             </h1>
             <p className="text-xl text-gray-400 max-w-3xl">
-              We're a team of passionate technologists, problem solvers, and innovators dedicated to helping small and medium businesses thrive in the digital age.
+              We're creating an AI-powered ecosystem that empowers product managers 
+              to make better decisions, collaborate effectively, and build amazing products.
             </p>
           </div>
         </section>
@@ -119,6 +121,45 @@ const AboutUs = () => {
             >
               Schedule a Free Consultation
             </button>
+          </div>
+        </section>
+
+        {/* Platform Vision */}
+        <section className="py-20 bg-[#21222c]">
+          <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-3xl font-bold text-white mb-12 text-center">
+              Our Platform Vision
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-semibold text-white">AI-Powered Assistant</h3>
+                <p className="text-gray-400">
+                  Oden, our AI assistant, is designed specifically for product managers, 
+                  offering instant answers, guidance, and best practices.
+                </p>
+              </div>
+              <div className="space-y-6">
+                <h3 className="text-2xl font-semibold text-white">Community Hub</h3>
+                <p className="text-gray-400">
+                  A space for product managers to connect, share knowledge, and collaborate 
+                  through forums and private channels.
+                </p>
+              </div>
+              <div className="space-y-6">
+                <h3 className="text-2xl font-semibold text-white">Product Notebook</h3>
+                <p className="text-gray-400">
+                  Intelligent tools for backlog management, prioritization, and technical 
+                  debt visualization.
+                </p>
+              </div>
+              <div className="space-y-6">
+                <h3 className="text-2xl font-semibold text-white">Prompt Studio</h3>
+                <p className="text-gray-400">
+                  Specialized prompts and templates for product managers to get the most 
+                  out of AI interactions.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       </main>
